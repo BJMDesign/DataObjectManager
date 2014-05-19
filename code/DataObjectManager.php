@@ -458,7 +458,7 @@ EOF
 		);
 		$saveAction->addExtraClass('save');
 		$form->setActions($actions);
-		$form->Fields()->insertFirst(new LiteralField('open','<div id="field-holder"><div id="fade"></div>'));
+		$form->Fields()->insertFirst(new LiteralField('open','<div id="field-holder">'));
 		$o = $form->Fields()->Last();
 		$form->Fields()->insertAfter(new LiteralField('close','</div>'),$o->Name());
 
@@ -1018,7 +1018,7 @@ class DataObjectManager_ItemRequest extends ComplexTableField_ItemRequest
 	function DetailForm($childID = null)
 	{
 		$form = parent::DetailForm($childID);
-		$form->Fields()->insertFirst(new LiteralField('open','<div id="field-holder"><div id="fade"></div>'));
+		$form->Fields()->insertFirst(new LiteralField('open','<div id="field-holder">'));
 		$o = $form->Fields()->Last();
 		$form->Fields()->insertAfter(new LiteralField('close','</div>'),$o->Name());
 		if(!$this->ctf->Can('edit')) {
